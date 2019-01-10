@@ -1,0 +1,75 @@
+.skills-java, .skills-java2, .skills-angular, .skills-react, .skills-database, .skills-database2 {
+    position: absolute;
+    opacity: 0;
+}
+
+#skills-java {
+    align-self: flex-start;
+    width: 250px
+}
+
+#skills-java2 {
+    align-self: flex-end;
+    width: 250px;
+}
+
+#skills-react {
+    align-self: center;
+    width: 250px
+}
+
+#skills-angular {
+    align-self: flex-start;
+    width: 250px
+}
+
+#skills-database {
+    align-self: flex-end;
+    width: 250px
+}
+
+#skills-database2 {
+    align-self: flex-start;
+    width: 250px
+}
+
+.letter {
+    display: inline-block;
+    position: relative;
+    transform: translateZ(25px);
+    transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+    transform: rotateX(90deg);
+    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+    transform: rotateX(-90deg);
+}
+
+.letter.in {
+    transform: rotateX(0deg);
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wisteria {
+    color: #8e44ad;
+}
+
+.belize {
+    color: #2980b9;
+}
+
+.pomegranate {
+    color: #c0392b;
+}
+
+.green {
+    color: #16a085;
+}
+
+.midnight {
+    color: #2c3e50;
+}
