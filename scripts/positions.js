@@ -2,27 +2,32 @@ let aboutSection = document.getElementById("about");
 let experienceSection = document.getElementById("experience");
 let skillsSection = document.getElementById("skills");
 let contactSection = document.getElementById("contact");
-
-// const siteHeight = document.body.scrollHeight;
-const clientHeight = document.documentElement.clientHeight;
-setSectionHeight();
-
-const boundingRectTop = document.body.getBoundingClientRect().top;
-const aboutSectionTop = aboutSection.getBoundingClientRect().top - boundingRectTop;
-const experienceSectionTop = experienceSection.getBoundingClientRect().top - boundingRectTop;
-const skillsSectionTop = skillsSection.getBoundingClientRect().top - boundingRectTop;
-const contactSectionTop = contactSection.getBoundingClientRect().top - boundingRectTop;
-
 let homeLink = document.getElementById("home-link");
 let aboutLink = document.getElementById("about-link");
 let experienceLink = document.getElementById("experience-link");
 let skillsLink = document.getElementById("skills-link");
 let contactLink = document.getElementById("contact-link");
+// const siteHeight = document.body.scrollHeight;
+const clientHeight = document.documentElement.clientHeight;
+let aboutSectionTop;
+let experienceSectionTop;
+let skillsSectionTop;
+let contactSectionTop;
+setSectionTop();
+setSectionHeight();
+setActiveLink();
+
+function setSectionTop() {
+    let boundingRectTop = document.body.getBoundingClientRect().top;
+    aboutSectionTop = aboutSection.getBoundingClientRect().top - boundingRectTop;
+    experienceSectionTop = experienceSection.getBoundingClientRect().top - boundingRectTop;
+    skillsSectionTop = skillsSection.getBoundingClientRect().top - boundingRectTop;
+    contactSectionTop = contactSection.getBoundingClientRect().top - boundingRectTop;
+}
 
 
 function setSectionHeight() {
     const clientHeight = document.documentElement.clientHeight;
-    console.log(experienceSection.getBoundingClientRect().top);
     let sections = document.getElementsByTagName("section");
     for (let i = 0; i < sections.length; i++) {
         sections[i].style.height = clientHeight + 'px';
@@ -61,11 +66,12 @@ function setActiveLink() {
     }
 }
 
-function onScroll() {
+function settings() {
     const scroll = window.pageYOffset || document.documentElement.scrollTop;
     const windowPosition = clientHeight + scroll;
     setActiveLink();
     setSectionHeight();
+    setSectionTop();
 }
 
 function scrollToHome() {
@@ -88,11 +94,11 @@ function scrollToContact() {
     window.scrollTo(0, contactSectionTop);
 }
 
-window.addEventListener("load", onScroll);
-window.addEventListener("scroll", onScroll);
+window.addEventListener("load", settings);
+window.addEventListener("scroll", settings);
+window.addEventListener("resize", settings);
 homeLink.addEventListener("click", scrollToHome);
 aboutLink.addEventListener("click", scrollToAbout);
 experienceLink.addEventListener("click", scrollToExperience);
 skillsLink.addEventListener("click", scrollToSkills);
 contactLink.addEventListener("click", scrollToContact);
-
