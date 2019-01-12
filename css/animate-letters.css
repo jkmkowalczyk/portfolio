@@ -1,37 +1,4 @@
-.skills-java, .skills-java2, .skills-angular, .skills-react, .skills-database, .skills-database2 {
-    position: absolute;
-    opacity: 0;
-}
 
-#skills-java {
-    align-self: flex-start;
-    width: 250px
-}
-
-#skills-java2 {
-    align-self: flex-end;
-    width: 250px;
-}
-
-#skills-react {
-    align-self: center;
-    width: 250px
-}
-
-#skills-angular {
-    align-self: flex-start;
-    width: 250px
-}
-
-#skills-database {
-    align-self: flex-end;
-    width: 250px
-}
-
-#skills-database2 {
-    align-self: flex-start;
-    width: 250px
-}
 
 .letter {
     display: inline-block;

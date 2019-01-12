@@ -24,31 +24,31 @@
     </div>
     <div id="navbar-menu-container">
         <ul id="menu-list">
-            <li id="home-link"><i class="fas fa-home"></i></li>
-            <li id="about-link"><i class="fas fa-user-ninja"></i></li>
-            <li id="experience-link"><i class="fas fa-briefcase"></i></li>
-            <li id="skills-link"><i class="fas fa-lightbulb"></i></li>
-            <li id="contact-link"><i class="fas fa-envelope"></i></li>
+            <li id="home-link" class="link"><i class="fas fa-home"></i></li>
+            <li id="about-link" class="link"><i class="fas fa-user-ninja"></i></li>
+            <li id="experience-link" class="link"><i class="fas fa-briefcase"></i></li>
+            <li id="skills-link" class="link"><i class="fas fa-lightbulb"></i></li>
+            <li id="contact-link" class="link"><i class="fas fa-envelope"></i></li>
         </ul>
     </div>
     <div id="navbar-footer-container">
         <ul id="footer-list">
-            <li id="facebook-link">
+            <li id="facebook-link" class="link">
                 <a href="https://facebook.com" target="_blank">
                     <i class="fab fa-facebook-square"></i>
                 </a>
             </li>
-            <li id="google-link">
+            <li id="google-link" class="link">
                 <a href="https://plus.google.com" target="_blank">
                     <i class="fab fa-google-plus-square"></i>
                 </a>
             </li>
-            <li id="linkedin-link">
+            <li id="linkedin-link" class="link">
                 <a href="https://linkedin.com" target="_blank">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </li>
-            <li id="github-link">
+            <li id="github-link" class="link">
                 <a href="https://github.com" target="_blank">
                     <i class="fab fa-github-square"></i>
                 </a>
@@ -58,7 +58,7 @@
 </nav>
 <main>
     <section id="home">
-        <div id="home-container">
+        <div class="container" id="home-container">
             <div class="home-container-box">
                 <div id="home-header">
                     <h1>Hi, I'm <img id="jakub" src="img/jakub.png"/></h1>
@@ -70,13 +70,13 @@
                     <button class="home-button" id="resume-button">get my resume</button>
                 </div>
             </div>
-            <div class="home-container-box">
+            <div id="home-container-logo-box" class="home-container-box">
                 <img id="home-container-logo" src="img/logo.png">
             </div>
         </div>
     </section>
     <section id="about">
-        <div id="about-container">
+        <div class="container" id="about-container">
             <div class="about-container-box">
                 <div id="about-text">
                     <h1>ABOUT ME</h1>
@@ -99,7 +99,7 @@
             </div>
         </div>
     </section>
-    <section id="experience">
+    <section class="container" id="experience">
         <div id="experience-container">
             <h1>My work experience</h1>
             <div id="experience-timeline">
@@ -164,72 +164,70 @@
             </div>
         </div>
     </section>
-    <section id="skills">
-        <div id="skills-container">
-            <div id="progressbars-container">
-                <div class="progressbar-container" id="progressbar-container-java">
-                    <h3>JAVA 8+</h3>
-                    <div class="progressbar-wrapper">
-                        <span id="progressbar-java"></span>
-                        <p id="progressbar-percentage-java">80%</p>
-                    </div>
-                </div>
-                <div class="progressbar-container" id="progressbar-container-react">
-                    <h3>REACT</h3>
-                    <div class="progressbar-wrapper">
-                        <span id="progressbar-react"></span>
-                        <p id="progressbar-percentage-react">65%</p>
-                    </div>
-                </div>
-                <div class="progressbar-container" id="progressbar-container-angular">
-                    <h3>ANGULAR 2+</h3>
-                    <div class="progressbar-wrapper">
-                        <span id="progressbar-angular"></span>
-                        <p id="progressbar-percentage-angular">60%</p>
-                    </div>
-                </div>
-                <div class="progressbar-container" id="progressbar-container-database">
-                    <h3>DATABASE</h3>
-                    <div class="progressbar-wrapper">
-                        <span id="progressbar-database"></span>
-                        <p id="progressbar-percentage-database">70%</p>
-                    </div>
+    <section class="container" id="skills">
+        <div id="skills-progressbars-container">
+            <div class="progressbar-container" id="progressbar-container-java">
+                <h3>JAVA 8+</h3>
+                <div class="progressbar-wrapper">
+                    <span id="progressbar-java"></span>
+                    <p id="progressbar-percentage-java">80%</p>
                 </div>
             </div>
-            <div id="skills-list-container">
-                <div id="skills-java">
-                    <span class="skills-java midnight">flyway</span>
-                    <span class="skills-java wisteria">springboot</span>
-                    <span class="skills-java belize">hibernate</span>
+            <div class="progressbar-container" id="progressbar-container-react">
+                <h3>REACT</h3>
+                <div class="progressbar-wrapper">
+                    <span id="progressbar-react"></span>
+                    <p id="progressbar-percentage-react">65%</p>
                 </div>
-                <div id="skills-java2">
-                    <span class="skills-java2 pomegranate">maven</span>
-                    <span class="skills-java2 midnight">junit5+mockito</span>
-                    <span class="skills-java2 green">gradle</span>
+            </div>
+            <div class="progressbar-container" id="progressbar-container-angular">
+                <h3>ANGULAR 2+</h3>
+                <div class="progressbar-wrapper">
+                    <span id="progressbar-angular"></span>
+                    <p id="progressbar-percentage-angular">60%</p>
                 </div>
-                <div id="skills-angular">
-                    <span class="skills-angular midnight">typescript</span>
-                    <span class="skills-angular pomegranate">ngRx</span>
-                </div>
-                <div id="skills-react">
-                    <span class="skills-react belize">javascript</span>
-                    <span class="skills-react midnight">redux</span>
-                </div>
-                <div id="skills-database">
-                    <span class="skills-database wisteria">SQL</span>
-                    <span class="skills-database midnight">Postgres</span>
-                    <span class="skills-database pomegranate">mySQL</span>
-                </div>
-                <div id="skills-database2">
-                    <span class="skills-database2 green">noSQL</span>
-                    <span class="skills-database2 midnight">MongoDb</span>
-                    <span class="skills-database2 wisteria">Cassandra</span>
-                    <span class="skills-database2 pomegranate">Solr</span>
+            </div>
+            <div class="progressbar-container" id="progressbar-container-database">
+                <h3>DATABASE</h3>
+                <div class="progressbar-wrapper">
+                    <span id="progressbar-database"></span>
+                    <p id="progressbar-percentage-database">70%</p>
                 </div>
             </div>
         </div>
+        <div id="skills-list-container">
+            <div id="skills-java">
+                <span class="skills-java midnight">flyway</span>
+                <span class="skills-java wisteria">springboot</span>
+                <span class="skills-java belize">hibernate</span>
+            </div>
+            <div id="skills-java2">
+                <span class="skills-java2 pomegranate">maven</span>
+                <span class="skills-java2 midnight">junit5+mockito</span>
+                <span class="skills-java2 green">gradle</span>
+            </div>
+            <div id="skills-angular">
+                <span class="skills-angular midnight">typescript</span>
+                <span class="skills-angular pomegranate">ngRx</span>
+            </div>
+            <div id="skills-react">
+                <span class="skills-react belize">javascript</span>
+                <span class="skills-react midnight">redux</span>
+            </div>
+            <div id="skills-database">
+                <span class="skills-database wisteria">SQL</span>
+                <span class="skills-database midnight">Postgres</span>
+                <span class="skills-database pomegranate">mySQL</span>
+            </div>
+            <div id="skills-database2">
+                <span class="skills-database2 green">noSQL</span>
+                <span class="skills-database2 midnight">MongoDb</span>
+                <span class="skills-database2 wisteria">Cassandra</span>
+                <span class="skills-database2 pomegranate">Solr</span>
+            </div>
+        </div>
     </section>
-    <section id="contact">
+    <section class="container" id="contact">
         <div class="contact-container">
             <h3>CONTACT ME</h3>
             <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
@@ -249,7 +247,6 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5"></textarea>
                     </div>
-
                     <button id="submit-button" class="button"><span>Send</span></button>
                     <p class="thank-you-msg" style="display:none;">
                         Dziękujemy za wiadomość.
@@ -268,8 +265,7 @@
                     <p>tel: 602 674 962</p>
                 </div>
             </div>
-            <div id="contact-map-container"></div>
-        </div>
+            <!--<div id="contact-map-container"></div>-->
         </div>
     </section>
     <!--<section id="offer">-->

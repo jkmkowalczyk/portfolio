@@ -18,10 +18,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    display: flex;
-}
-
 body, ul, li, h1, h2, h3, h4, p {
     margin: 0;
     padding: 0;
@@ -60,7 +56,7 @@ nav {
     position: fixed;
     width: 60px;
     border-right: 1px solid #08fdd8;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -70,7 +66,7 @@ nav {
 }
 
 #navbar-logo-container {
-    height: 60px;
+    height: 50px;
     background-color: black;
     padding: 5px;
     display: flex;
@@ -99,7 +95,7 @@ nav {
     transition: all 0.3s ease-in-out;
 }
 
-li:hover {
+.link:hover {
     cursor: pointer;
 }
 
@@ -117,9 +113,12 @@ li:hover {
     align-items: center;
 }
 
+#footer-list li {
+    padding: 5px 0;
+}
+
 #footer-list li a i {
     font-size: 25px;
-    padding: 5px 0;
     transition: all 0.3s ease-in-out
 }
 
@@ -140,9 +139,14 @@ li:hover {
 }
 
 main {
-    margin-left: 60px;
-    position: relative;
+    padding: 0 0 0 60px;
     flex: 1;
+}
+
+.container {
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
 }
 
 #home {
@@ -177,6 +181,11 @@ main {
     height: 50px;
 }
 
+#home-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
 .home-button {
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
@@ -193,8 +202,6 @@ main {
     -webkit-animation: Gradient 10s ease infinite;
     -moz-animation: Gradient 10s ease infinite;
     animation: Gradient 10s ease infinite;
-    margin-left: 20px;
-    margin-right: 100px;
 }
 
 #resume-button {
@@ -219,11 +226,16 @@ main {
 
 #about-container {
     display: flex;
+    width: 80%;
+}
+
+.about-container-box {
+    display: flex;
+    justify-content: center;
 }
 
 #about-text {
     text-align: justify;
-    width: 550px;
 }
 
 #about-text h1 {
@@ -241,8 +253,8 @@ main {
 }
 
 #about-photo {
-    margin-left: 150px;
-    margin-top: 75px;
+    align-self: center;
+    margin-left: 100px;
     height: 300px;
     border: 2px solid black;
     border-radius: 10px;
@@ -258,10 +270,9 @@ main {
 
 #experience-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    padding-bottom: 50px;
     height: 100%;
 }
 
@@ -270,7 +281,7 @@ main {
     font-size: 50px;
     color: white;
     text-transform: uppercase;
-    margin-bottom: 75px;
+    /*margin-bottom: 75px;*/
     letter-spacing: 3px;
 }
 
@@ -393,22 +404,18 @@ main {
 #skills {
     background: url("../img/background/skills-bg.jpg");
     z-index: 2;
-}
-
-#skills-container {
-    width: 100%;
     color: white;
     font-size: 30px;
     display: flex;
     font-family: 'Audiowide', cursive;
     justify-content: space-around;
-    height: 500px;
 }
 
-#progressbars-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+#skills-progressbars-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 50px;
 }
 
 #skills-list-container {
@@ -416,12 +423,11 @@ main {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    position: initial;
     width: 40%;
+    height: 100%;
 }
 
 .progressbar-container {
-
     position: relative;
 }
 
@@ -457,10 +463,41 @@ main {
     width: 70%;
 }
 
+.skills-java, .skills-java2, .skills-angular, .skills-react, .skills-database, .skills-database2 {
+    position: absolute;
+    opacity: 0;
+    width: 250px
+}
+
+#skills-java {
+    align-self: flex-start;
+}
+
+#skills-java2 {
+    align-self: center;
+}
+
+#skills-react {
+    align-self: center;
+}
+
+#skills-angular {
+    align-self: flex-start;
+}
+
+#skills-database {
+    align-self: flex-start;
+}
+
+#skills-database2 {
+    align-self: center;
+}
+
 #contact {
     background: url("../img/background/contact-bg.jpg");
     background-size: cover;
     z-index: 1;
+    display: flex;
 }
 
 .contact-container {
@@ -478,15 +515,17 @@ main {
 }
 
 #form-elements {
-    width: 100%;
     color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .fieldset {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    width: 400px
+    width: 400px;
 }
 
 .fieldset input, .fieldset textarea {
@@ -535,8 +574,8 @@ input:-webkit-autofill:active {
 #contact-info-container {
     background: #2f2f2f;
     padding: 50px;
-    height: 150px;
     display: flex;
+    height: 150px;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -550,3 +589,136 @@ input:-webkit-autofill:active {
     background-size: contain;
 }
 
+@media (max-width: 1000px) {
+    nav {
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid #08fdd8;
+        -webkit-box-shadow: 0px 8px 31px -8px rgba(8, 253, 216, 0.66);
+        -moz-box-shadow: 0px 8px 31px -8px rgba(8, 253, 216, 0.66);
+        box-shadow: 0px 8px 31px -8px rgba(8, 253, 216, 0.66);
+    }
+
+    main {
+        padding: 60px 0 0 0;
+    }
+
+    #menu-list li, #footer-list {
+        display: inline;
+    }
+
+    #navbar-menu-container {
+        flex-direction: initial;
+    }
+
+    #navbar-footer-container {
+        flex-direction: row;
+    }
+
+    .link {
+        display: inline;
+    }
+
+    #menu-list li {
+        padding: 0 15px;
+    }
+
+    #footer-list li {
+        padding: 0 5px;
+    }
+
+    #home-header {
+        font-size: 30px;
+    }
+
+    #jakub {
+        height: 40px;
+    }
+
+    #home-container-logo-box {
+        display: none;
+    }
+
+    .home-button {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    #about-container {
+        flex-direction: column;
+    }
+
+    #about-text p {
+        font-size: 15px;
+    }
+
+    #about-photo {
+        display: none;
+        margin: 0;
+    }
+
+    #skills {
+        flex-direction: column;
+        font-size: 16px;
+    }
+
+    #skills-progressbars-container {
+        grid-row-gap: 20px;
+    }
+
+    #skills-progressbars-container {
+        width: 100%;
+    }
+
+    .progressbar-wrapper {
+        width: 100%;
+    }
+
+    #progressbar-container-react {
+        left: 0;
+    }
+
+    #progressbar-container-angular {
+        left: 0;
+    }
+
+    #progressbar-container-database {
+        left: 0;
+    }
+
+    #skills-list-container {
+        width: 100%;
+        height: 150px;
+    }
+
+    .contact-container h3 {
+        font-size: 60px;
+    }
+
+    #contact {
+        flex-direction: column;
+    }
+
+    .fieldset {
+        padding: 10px;
+        width: 300px;
+    }
+
+    #contact-info-container {
+        background: #2f2f2f;
+        padding: 20px;
+        height: initial;
+    }
+
+
+
+    #contact-info-container h2 {
+        font-size: 22px;
+    }
+    #contact-info-container p {
+        font-size: 14px;
+    }
+
+}
