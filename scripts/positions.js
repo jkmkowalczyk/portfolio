@@ -17,6 +17,7 @@ let experienceSectionTop;
 let skillsSectionTop;
 let contactSectionTop;
 
+setSectionHeight();
 
 function setSectionTop() {
     homeSectionTop = homeSection.getBoundingClientRect().top - pageYOffset;
@@ -27,8 +28,10 @@ function setSectionTop() {
 }
 
 function setSectionHeight() {
+    clientWidth = document.documentElement.clientWidth;
     const clientHeight = document.documentElement.clientHeight;
     let sections = document.getElementsByTagName("section");
+    console.log(clientHeight);
     for (let i = 0; i < sections.length; i++) {
         if (clientWidth < 1000)
             sections[i].style.height = clientHeight - 60 + 'px';
@@ -74,9 +77,9 @@ function setActiveLink() {
 }
 
 function setUp() {
-    clientWidth = document.documentElement.clientWidth;
+
     pageYOffset = document.body.getBoundingClientRect().top;
-    setSectionHeight();
+
     setSectionTop();
     setActiveLink();
 }
