@@ -38,6 +38,7 @@ a {
 }
 
 section {
+    padding: 50px;
     background-size: cover;
     display: flex;
     justify-content: space-around;
@@ -143,12 +144,6 @@ main {
     flex: 1;
 }
 
-.container {
-    padding: 50px;
-    display: flex;
-    justify-content: space-around;
-}
-
 #home {
     background: url("../img/background/home-bg.jpg");
     background-size: cover;
@@ -226,7 +221,6 @@ main {
 
 #about-container {
     display: flex;
-    width: 80%;
 }
 
 .about-container-box {
@@ -404,24 +398,17 @@ main {
     justify-content: space-around;
 }
 
-#skills-progressbars-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-row-gap: 50px;
+.skills-container {
     width: 40%;
-}
-
-#skills-list-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 40%;
-    height: 100%;
 }
 
 .progressbar-container {
+    width: 100%;
     position: relative;
 }
 
@@ -585,6 +572,10 @@ input:-webkit-autofill:active {
 }
 
 @media (max-width: 1000px) {
+    section {
+        padding: 20px;
+    }
+
     nav {
         width: 100%;
         height: 60px;
@@ -598,10 +589,6 @@ input:-webkit-autofill:active {
 
     main {
         padding: 60px 0 0 0;
-    }
-
-    .container {
-        padding: 20px;
     }
 
     #menu-list li, #footer-list {
@@ -648,6 +635,10 @@ input:-webkit-autofill:active {
 
     #about-container {
         flex-direction: column;
+    }
+
+    #about-text h1 {
+        font-size: 35px;
     }
 
     #about-text p {
@@ -851,12 +842,13 @@ input:-webkit-autofill:active {
         font-size: 16px;
     }
 
-    #skills-progressbars-container {
-        grid-row-gap: 20px;
+    .skills-container {
+        width: 100%;
     }
 
-    #skills-progressbars-container {
-        width: 100%;
+
+    .progressbar-wrapper {
+        padding: 5px !important;
     }
 
     #progressbar-container-react {
@@ -871,13 +863,13 @@ input:-webkit-autofill:active {
         left: 7px;
     }
 
-    #skills-list-container {
-        width: 100%;
-        height: 150px;
+    .skills-java, .skills-java2, .skills-angular,
+    .skills-react, .skills-database, .skills-database2 {
+        width: 140px;
     }
 
     .contact-container h3 {
-        font-size: 60px;
+        font-size: 40px;
     }
 
     #contact {
@@ -891,16 +883,21 @@ input:-webkit-autofill:active {
 
     #contact-info-container {
         background: #2f2f2f;
-        padding: 20px;
+        padding: 10px;
         height: initial;
     }
 
     #contact-info-container h2 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     #contact-info-container p {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    #submit-button {
+        border: 2px solid #08fdd8;
+        padding: 5px 10px;
     }
 
 }
