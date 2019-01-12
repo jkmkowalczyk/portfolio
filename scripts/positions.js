@@ -1,3 +1,4 @@
+let homeSection = document.getElementById("home");
 let aboutSection = document.getElementById("about");
 let experienceSection = document.getElementById("experience");
 let skillsSection = document.getElementById("skills");
@@ -7,96 +8,117 @@ let aboutLink = document.getElementById("about-link");
 let experienceLink = document.getElementById("experience-link");
 let skillsLink = document.getElementById("skills-link");
 let contactLink = document.getElementById("contact-link");
-// const siteHeight = document.body.scrollHeight;
-const clientHeight = document.documentElement.clientHeight;
+
+let clientWidth;
+let pageYOffset;
+let homeSectionTop;
 let aboutSectionTop;
 let experienceSectionTop;
 let skillsSectionTop;
 let contactSectionTop;
-setSectionTop();
-setSectionHeight();
-setActiveLink();
+
 
 function setSectionTop() {
-    let boundingRectTop = document.body.getBoundingClientRect().top;
-    aboutSectionTop = aboutSection.getBoundingClientRect().top - boundingRectTop;
-    experienceSectionTop = experienceSection.getBoundingClientRect().top - boundingRectTop;
-    skillsSectionTop = skillsSection.getBoundingClientRect().top - boundingRectTop;
-    contactSectionTop = contactSection.getBoundingClientRect().top - boundingRectTop;
+    homeSectionTop = homeSection.getBoundingClientRect().top - pageYOffset;
+    aboutSectionTop = aboutSection.getBoundingClientRect().top - pageYOffset;
+    experienceSectionTop = experienceSection.getBoundingClientRect().top - pageYOffset;
+    skillsSectionTop = skillsSection.getBoundingClientRect().top - pageYOffset;
+    contactSectionTop = contactSection.getBoundingClientRect().top - pageYOffset;
 }
-
 
 function setSectionHeight() {
     const clientHeight = document.documentElement.clientHeight;
     let sections = document.getElementsByTagName("section");
     for (let i = 0; i < sections.length; i++) {
-        sections[i].style.height = clientHeight + 'px';
+        if (clientWidth < 1000)
+            sections[i].style.height = clientHeight - 60 + 'px';
+        else
+            sections[i].style.height = clientHeight + 'px';
     }
 }
 
 function setActiveLink() {
-    const scroll = window.pageYOffset + 1 || document.documentElement.scrollTop + 1;
-    if (scroll <= aboutSectionTop) {
+    let scrollValue;
+
+    if (clientWidth < 1000)
+        scrollValue = pageYOffset * -1 + 60;
+    else
+        scrollValue = pageYOffset * -1;
+
+
+    if (scrollValue <= aboutSectionTop) {
         homeLink.classList.add("active-link");
     } else {
         homeLink.classList.remove("active-link");
     }
-
-    if (scroll >= aboutSectionTop && scroll < experienceSectionTop) {
+    if (scrollValue >= aboutSectionTop && scrollValue < experienceSectionTop) {
         aboutLink.classList.add("active-link");
     } else {
         aboutLink.classList.remove("active-link");
     }
-    if (scroll >= experienceSectionTop && scroll < skillsSectionTop) {
+    if (scrollValue >= experienceSectionTop && scrollValue < skillsSectionTop) {
         experienceLink.classList.add("active-link");
     } else {
         experienceLink.classList.remove("active-link");
     }
-
-    if (scroll >= skillsSectionTop && scroll < contactSectionTop) {
+    if (scrollValue >= skillsSectionTop && scrollValue < contactSectionTop) {
         skillsLink.classList.add("active-link");
     } else {
         skillsLink.classList.remove("active-link");
     }
-
-    if (scroll >= contactSectionTop) {
+    if (scrollValue >= contactSectionTop) {
         contactLink.classList.add("active-link");
     } else {
         contactLink.classList.remove("active-link");
     }
 }
 
-function settings() {
-    const scroll = window.pageYOffset || document.documentElement.scrollTop;
-    const windowPosition = clientHeight + scroll;
-    setActiveLink();
+function setUp() {
+    clientWidth = document.documentElement.clientWidth;
+    pageYOffset = document.body.getBoundingClientRect().top;
     setSectionHeight();
     setSectionTop();
+    setActiveLink();
 }
 
 function scrollToHome() {
-    window.scrollTo(0, 0);
+    if (clientWidth < 1000)
+        window.scrollTo(0, homeSectionTop - 60);
+    else
+        window.scrollTo(0, homeSectionTop);
 }
 
 function scrollToAbout() {
-    window.scrollTo(0, aboutSectionTop);
+    if (clientWidth < 1000)
+        window.scrollTo(0, aboutSectionTop - 60);
+    else
+        window.scrollTo(0, aboutSectionTop);
 }
 
 function scrollToExperience() {
-    window.scrollTo(0, experienceSectionTop);
+    if (clientWidth < 1000)
+        window.scrollTo(0, experienceSectionTop - 60);
+    else
+        window.scrollTo(0, experienceSectionTop);
 }
 
 function scrollToSkills() {
-    window.scrollTo(0, skillsSectionTop);
+    if (clientWidth < 1000)
+        window.scrollTo(0, skillsSectionTop - 60);
+    else
+        window.scrollTo(0, skillsSectionTop);
 }
 
 function scrollToContact() {
-    window.scrollTo(0, contactSectionTop);
+    if (clientWidth < 1000)
+        window.scrollTo(0, contactSectionTop - 60);
+    else
+        window.scrollTo(0, contactSectionTop);
 }
 
-window.addEventListener("load", settings);
-window.addEventListener("scroll", settings);
-window.addEventListener("resize", settings);
+window.addEventListener("load", setUp);
+window.addEventListener("scroll", setUp);
+window.addEventListener("resize", setUp);
 homeLink.addEventListener("click", scrollToHome);
 aboutLink.addEventListener("click", scrollToAbout);
 experienceLink.addEventListener("click", scrollToExperience);
