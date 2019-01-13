@@ -8,7 +8,7 @@ let aboutLink = document.getElementById("about-link");
 let experienceLink = document.getElementById("experience-link");
 let skillsLink = document.getElementById("skills-link");
 let contactLink = document.getElementById("contact-link");
-
+let contactButton = document.getElementById('contact-button');
 let clientWidth;
 let pageYOffset;
 let homeSectionTop;
@@ -42,11 +42,10 @@ function setSectionHeight() {
 
 function setActiveLink() {
     let scrollValue;
-
     if (clientWidth < 1000)
-        scrollValue = pageYOffset * -1 + 60;
+        scrollValue = pageYOffset * -1 + 5;
     else
-        scrollValue = pageYOffset * -1;
+        scrollValue = pageYOffset * -1 + 100;
 
 
     if (scrollValue <= aboutSectionTop) {
@@ -77,7 +76,7 @@ function setActiveLink() {
 }
 
 function setUp() {
-
+    console.log('setup')
     pageYOffset = document.body.getBoundingClientRect().top;
 
     setSectionTop();
@@ -127,3 +126,4 @@ aboutLink.addEventListener("click", scrollToAbout);
 experienceLink.addEventListener("click", scrollToExperience);
 skillsLink.addEventListener("click", scrollToSkills);
 contactLink.addEventListener("click", scrollToContact);
+contactButton.addEventListener("click", scrollToContact);
