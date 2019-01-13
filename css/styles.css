@@ -28,8 +28,8 @@ li {
     text-align: center;
 }
 
-li:hover {
-    cursor: text;
+textarea:focus, input:focus, button:focus {
+    outline: none;
 }
 
 a {
@@ -94,6 +94,10 @@ nav {
     font-size: 25px;
     padding: 15px 0;
     transition: all 0.3s ease-in-out;
+}
+
+#menu-button {
+    display: none;
 }
 
 .link:hover {
@@ -567,7 +571,7 @@ input:-webkit-autofill:active {
     position: absolute;
     height: 300px;
     width: 300px;
-    background: url("../img/map.png") no-repeat;
+    background: url("../img/map.png") no-repeat center;
     background-size: contain;
 }
 
@@ -611,6 +615,7 @@ input:-webkit-autofill:active {
     }
 
     #menu-button {
+        display: initial;
         position: absolute;
         right: 10px;
         transition: all 0.5s ease-in-out;
