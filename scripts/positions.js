@@ -21,19 +21,9 @@ let contactSectionTop;
 
 setSectionHeight();
 
-function setSectionTop() {
-    homeSectionTop = homeSection.getBoundingClientRect().top - pageYOffset;
-    aboutSectionTop = aboutSection.getBoundingClientRect().top - pageYOffset;
-    experienceSectionTop = experienceSection.getBoundingClientRect().top - pageYOffset;
-    skillsSectionTop = skillsSection.getBoundingClientRect().top - pageYOffset;
-    contactSectionTop = contactSection.getBoundingClientRect().top - pageYOffset;
-}
-
 function setSectionHeight() {
-    clientWidth = document.documentElement.clientWidth;
     const clientHeight = document.documentElement.clientHeight;
     let sections = document.getElementsByTagName("section");
-    console.log(clientHeight);
     for (let i = 0; i < sections.length; i++) {
         if (clientWidth < 1000)
             sections[i].style.height = clientHeight - 60 + 'px';
@@ -42,13 +32,20 @@ function setSectionHeight() {
     }
 }
 
+function setSectionTop() {
+    homeSectionTop = homeSection.getBoundingClientRect().top - pageYOffset;
+    aboutSectionTop = aboutSection.getBoundingClientRect().top - pageYOffset;
+    experienceSectionTop = experienceSection.getBoundingClientRect().top - pageYOffset;
+    skillsSectionTop = skillsSection.getBoundingClientRect().top - pageYOffset;
+    contactSectionTop = contactSection.getBoundingClientRect().top - pageYOffset;
+}
+
 function setActiveLink() {
     let scrollValue;
     if (clientWidth < 1000)
         scrollValue = pageYOffset * -1 + 160;
     else
         scrollValue = pageYOffset * -1 + 100;
-
 
     if (scrollValue <= aboutSectionTop) {
         homeLink.classList.add("active-link");
@@ -78,9 +75,8 @@ function setActiveLink() {
 }
 
 function setUp() {
-    console.log('setup')
+    clientWidth = document.documentElement.clientWidth;
     pageYOffset = document.body.getBoundingClientRect().top;
-
     setSectionTop();
     setActiveLink();
 }
