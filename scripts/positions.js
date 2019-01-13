@@ -43,7 +43,7 @@ function setSectionHeight() {
 function setActiveLink() {
     let scrollValue;
     if (clientWidth < 1000)
-        scrollValue = pageYOffset * -1 + 80;
+        scrollValue = pageYOffset * -1 + 160;
     else
         scrollValue = pageYOffset * -1 + 100;
 
