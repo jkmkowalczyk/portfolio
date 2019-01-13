@@ -1,3 +1,5 @@
+let menuList = document.getElementById("menu-list");
+let menuButton = document.getElementById("menu-button");
 let homeSection = document.getElementById("home");
 let aboutSection = document.getElementById("about");
 let experienceSection = document.getElementById("experience");
@@ -118,6 +120,22 @@ function scrollToContact() {
         window.scrollTo(0, contactSectionTop);
 }
 
+function showMenuList() {
+    if (clientWidth < 1000) {
+        menuList.classList.add("show-menu-list");
+        menuButton.classList.add("hide-menu-button");
+        menuButton.classList.add("open");
+    }
+}
+
+function hideMenuList() {
+    if (clientWidth < 1000) {
+        menuList.classList.remove("show-menu-list");
+        menuButton.classList.remove("hide-menu-button");
+        menuButton.classList.remove("open");
+    }
+}
+
 window.addEventListener("load", setUp);
 window.addEventListener("scroll", setUp);
 window.addEventListener("resize", setUp);
@@ -127,3 +145,5 @@ experienceLink.addEventListener("click", scrollToExperience);
 skillsLink.addEventListener("click", scrollToSkills);
 contactLink.addEventListener("click", scrollToContact);
 contactButton.addEventListener("click", scrollToContact);
+menuButton.addEventListener("click", showMenuList);
+window.addEventListener("scroll", hideMenuList);

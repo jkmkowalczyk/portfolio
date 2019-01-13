@@ -58,7 +58,6 @@ nav {
     position: fixed;
     width: 60px;
     border-right: 1px solid #08fdd8;
-    /*box-sizing: border-box;*/
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -592,10 +591,6 @@ input:-webkit-autofill:active {
         padding: 60px 0 0 0;
     }
 
-    #menu-list li, #footer-list {
-        display: inline;
-    }
-
     #navbar-menu-container {
         flex-direction: initial;
     }
@@ -603,6 +598,26 @@ input:-webkit-autofill:active {
     #navbar-footer-container {
         display: none;
         flex-direction: row;
+    }
+
+    #menu-list {
+        position: relative;
+        top: -60px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .show-menu-list {
+        top: 0 !important;
+    }
+
+    #menu-button {
+        position: absolute;
+        right: 10px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .hide-menu-button {
+        right: -50px !important;
     }
 
     .link {
@@ -846,7 +861,6 @@ input:-webkit-autofill:active {
     .skills-container {
         width: 100%;
     }
-
 
     .progressbar-wrapper {
         padding: 5px !important;
