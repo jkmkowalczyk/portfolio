@@ -4,12 +4,12 @@ let currentWordJava = 0;
 let java2 = document.getElementsByClassName('skills-java2');
 let java2Array = [];
 let currentWordJava2 = 0;
-let angular = document.getElementsByClassName('skills-angular');
-let angularArray = [];
-let currentWordAngular = 0;
-let react = document.getElementsByClassName('skills-react');
-let reactArray = [];
-let currentWordReact = 0;
+let frontend = document.getElementsByClassName('skills-frontend');
+let frontendArray = [];
+let currentWordFrontend = 0;
+let frontend2 = document.getElementsByClassName('skills-frontend2');
+let frontend2Array = [];
+let currentWordFrontend2 = 0;
 let database = document.getElementsByClassName('skills-database');
 let databaseArray = [];
 let currentWordDatabase = 0;
@@ -25,13 +25,13 @@ java2[0].style.opacity = 1;
 for (let i = 0; i < java2.length; i++) {
     java2Array.push(splitLetters(java2[i]));
 }
-angular[0].style.opacity = 1;
-for (let i = 0; i < angular.length; i++) {
-    angularArray.push(splitLetters(angular[i]));
+frontend[0].style.opacity = 1;
+for (let i = 0; i < frontend.length; i++) {
+    frontendArray.push(splitLetters(frontend[i]));
 }
-react[0].style.opacity = 1;
-for (let i = 0; i < react.length; i++) {
-    reactArray.push(splitLetters(react[i]));
+frontend2[0].style.opacity = 1;
+for (let i = 0; i < frontend2.length; i++) {
+    frontend2Array.push(splitLetters(frontend2[i]));
 }
 database[0].style.opacity = 1;
 for (let i = 0; i < database.length; i++) {
@@ -54,13 +54,13 @@ function changeJava2Word() {
 }
 
 function changeAngularWord() {
-    let currentWord = changeWord(angular, angularArray, currentWordAngular);
-    currentWordAngular = (currentWord === angularArray.length - 1) ? 0 : currentWord + 1;
+    let currentWord = changeWord(frontend, frontendArray, currentWordFrontend);
+    currentWordFrontend = (currentWord === frontendArray.length - 1) ? 0 : currentWord + 1;
 }
 
 function changeReactWord() {
-    let currentWord = changeWord(react, reactArray, currentWordReact);
-    currentWordReact = (currentWord === reactArray.length - 1) ? 0 : currentWord + 1;
+    let currentWord = changeWord(frontend2, frontend2Array, currentWordFrontend2);
+    currentWordFrontend2 = (currentWord === frontend2Array.length - 1) ? 0 : currentWord + 1;
 }
 
 function changeDatabaseWord() {

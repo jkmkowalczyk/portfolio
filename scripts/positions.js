@@ -1,3 +1,4 @@
+let nav = document.getElementsByTagName("nav")[0];
 let menuList = document.getElementById("menu-list");
 let menuButton = document.getElementById("menu-button");
 let homeSection = document.getElementById("home");
@@ -11,6 +12,11 @@ let experienceLink = document.getElementById("experience-link");
 let skillsLink = document.getElementById("skills-link");
 let contactLink = document.getElementById("contact-link");
 let contactButton = document.getElementById('contact-button');
+let progressbarJava = document.getElementById('progressbar-java');
+let progressbarReact = document.getElementById('progressbar-react');
+let progressbarAngular = document.getElementById('progressbar-angular');
+let progressbarDatabase = document.getElementById('progressbar-database');
+let scrollValue;
 let clientWidth;
 let pageYOffset;
 let homeSectionTop;
@@ -32,6 +38,28 @@ function setSectionHeight() {
     }
 }
 
+
+
+function animateProgressbars() {
+    progressbarJava.style.width = '80%';
+    setTimeout(function () {
+        progressbarReact.style.width = '65%';
+    }, 600);
+    setTimeout(function () {
+        progressbarAngular.style.width = '60%';
+    }, 200);
+    setTimeout(function () {
+        progressbarDatabase.style.width = '70%';
+    }, 400);
+}
+
+
+function animate() {
+    if (scrollValue >= skillsSectionTop) {
+        animateProgressbars();
+    }
+}
+
 function setSectionTop() {
     homeSectionTop = homeSection.getBoundingClientRect().top - pageYOffset;
     aboutSectionTop = aboutSection.getBoundingClientRect().top - pageYOffset;
@@ -41,12 +69,6 @@ function setSectionTop() {
 }
 
 function setActiveLink() {
-    let scrollValue;
-    if (clientWidth < 1000)
-        scrollValue = pageYOffset * -1 + 160;
-    else
-        scrollValue = pageYOffset * -1 + 100;
-
     if (scrollValue <= aboutSectionTop) {
         homeLink.classList.add("active-link");
     } else {
@@ -77,8 +99,17 @@ function setActiveLink() {
 function setUp() {
     clientWidth = document.documentElement.clientWidth;
     pageYOffset = document.body.getBoundingClientRect().top;
+    if (clientWidth < 1000)
+        scrollValue = pageYOffset * -1 + 160;
+    else
+        scrollValue = pageYOffset * -1 + 100;
     setSectionTop();
     setActiveLink();
+}
+
+function showNav() {
+    nav.style.left = '0';
+    nav.style.top = '0';
 }
 
 function scrollToHome() {
@@ -133,6 +164,7 @@ function hideMenuList() {
 }
 
 window.addEventListener("load", setUp);
+window.addEventListener("load", showNav);
 window.addEventListener("scroll", setUp);
 window.addEventListener("resize", setUp);
 homeLink.addEventListener("click", scrollToHome);
@@ -143,3 +175,4 @@ contactLink.addEventListener("click", scrollToContact);
 contactButton.addEventListener("click", scrollToContact);
 menuButton.addEventListener("click", showMenuList);
 window.addEventListener("scroll", hideMenuList);
+window.addEventListener("scroll", animate);
