@@ -248,10 +248,11 @@ main {
     font-family: 'ZCOOL QingKe HuangYou', cursive;
     font-size: 50px;
     letter-spacing: 3px;
+    margin-bottom: 30px;
 }
 
 #about-text p {
-    padding-top: 50px;
+    margin-top: 15px;
     color: white;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
@@ -685,8 +686,8 @@ input:-webkit-autofill:active {
     }
 
     #about-text p {
-        font-size: 15px;
-    }
+         font-size: 15px;
+     }
 
     .about-bike {
         height: 70px;
