@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/gradient-background.css">
     <link rel="stylesheet" href="css/progress-bar.css">
     <link rel="stylesheet" href="css/animate-letters.css">
+    <link rel="stylesheet" href="css/image-popup.css">
     <link rel="stylesheet" href="mouse.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           crossorigin="anonymous">
@@ -20,6 +21,12 @@
 </head>
 <body>
 <nav>
+    <div id="popup">
+        <span id="close-button">&times;</span>
+        <div id="popup-content">
+            <img src="" id="popup-image">
+        </div>
+    </div>
     <div id="navbar-logo-container">
         <div id="navbar-logo"><img src="img/logo.png"></div>
     </div>
@@ -89,14 +96,21 @@
             <div class="about-container-box">
                 <div id="about-text">
                     <h1>ABOUT ME</h1>
-                    <p>My name is Jakub Kowalczyk and I'm from Wroclaw, Poland. 
-                       I guess you are here to get to know me a little, so let's get started!</p>
-                    <p>I'm currently working as a Java web developer with Angular. 
-                       I've participated in a few projects so far that concerned various business areas, 
-                       including transportation, banking, sales...</p>
-                    <p>I like sports, tv-shows and comic books, but my greatest passion are motorcycles. 
-                       I ride them, I build them, I customize them... you can see some of my projects below.
-                       In winter I enjoy snowboarding, occasionally skiing - too bad you can't really ride a bike on snow ;-)</p>
+                    <p>My name is Jakub Kowalczyk and I'm from Wroclaw, Poland.
+                        I guess you are here to get to know me a little, so let's get started!</p>
+                    <p>I'm currently working as a Java web developer with Angular.
+                        I've participated in a few projects so far that concerned various business areas,
+                        including transportation, banking, sales...</p>
+                    <p>I like sports, tv-shows and comic books, but my greatest passion are motorcycles.
+                        I ride them, I build them, I customize them... you can see some of my projects below.
+                        In winter I enjoy snowboarding, occasionally skiing - too bad you can't really ride a bike on
+                        snow ;-)</p>
+                </div>
+                <div id="about-bikes">
+                    <img src="img/bobber.jpg" class="about-bike" id="bobber">
+                    <img src="img/scrambler.jpg" class="about-bike" id="scrambler">
+                    <img src="img/iron-man.jpg" class="about-bike" id="iron-man">
+
                 </div>
             </div>
             <div class="about-container-box">
@@ -281,6 +295,7 @@
     </section>
 </main>
 <script type="text/javascript" src="scripts/script.js"></script>
+<script type="text/javascript" src="scripts/image-popup.js"></script>
 <script type="text/javascript" src="scripts/positions.js"></script>
 <script type="text/javascript" src="scripts/animate-skills.js"></script>
 <script type="text/javascript" src="scripts/show-experience.js"></script>

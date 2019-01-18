@@ -234,8 +234,9 @@ main {
 }
 
 .about-container-box {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template: "1" "1";
+    grid-row-gap: 30px;
 }
 
 #about-text {
@@ -254,6 +255,27 @@ main {
     color: white;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
+}
+
+#about-bikes {
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-bike {
+    height: 100px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 31px 8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 31px 8px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 31px 8px rgba(0, 0, 0, 0.75);
+    transition: 0.4s;
+}
+
+.about-bike:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 31px 4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 31px 4px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0 31px 4px rgba(0, 0, 0, 0.75);
 }
 
 #about-photo {
