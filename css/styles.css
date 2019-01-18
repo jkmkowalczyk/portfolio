@@ -688,6 +688,10 @@ input:-webkit-autofill:active {
         font-size: 15px;
     }
 
+    .about-bike {
+        height: 70px;
+    }
+
     #about-photo {
         display: none;
         margin: 0;
