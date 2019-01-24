@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jakub Kowalczyk</title>
     <link rel="icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu-button.css">
     <link rel="stylesheet" href="css/gradient-background.css">
     <link rel="stylesheet" href="css/progress-bar.css">
     <link rel="stylesheet" href="css/animate-letters.css">
     <link rel="stylesheet" href="css/image-popup.css">
-    <link rel="stylesheet" href="mouse.css">
+    <link rel="stylesheet" href="css/loader.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Montserrat|Work+Sans|Audiowide|ZCOOL+QingKe+HuangYou|Monoton|Staatliches"
@@ -23,7 +23,7 @@
 <div id="popup">
     <span id="close-button">&times;</span>
     <div id="popup-content">
-        <img src="" id="popup-image">
+        <img id="popup-image">
     </div>
 </div>
 <nav>
@@ -81,7 +81,8 @@
                 </div>
                 <div id="home-buttons">
                     <button class="home-button" id="contact-button">contact me</button>
-                    <button class="home-button" id="resume-button" type="submit" onclick="window.open('my-resume.pdf')">
+                    <button class="home-button" id="resume-button" type="submit"
+                            onclick="window.open('Jakub_Kowalczyk_resume.pdf')">
                         get my resume
                     </button>
                 </div>
@@ -155,10 +156,13 @@
                         <h3>Junior Software Developer</h3>
                         <h4>Implementation Specialist</h4>
                         <ul>
-                            <li>working remotely with UK customer</li>
-                            <li>creating software based on documentation in client’s internal system</li>
-                            <li> performing QA and manual testing based on documentation, fixing issues on production
+                            <li>creating software based on documentation in client’s internal system
+                                (using C# syntax)
                             </li>
+                            <li>developing and styling frontend layer of the application</li>
+                            <li>performing QA and manual testing based on documentation, fixing issues on production
+                            </li>
+                            <li>working remotely with UK customer</li>
                         </ul>
                     </div>
                 </div>
@@ -168,6 +172,7 @@
                         <h3>Junior Java Developer</h3>
                         <ul>
                             <li>developing software for banking sector</li>
+                            <li>creating internal documentation</li>
                         </ul>
                     </div>
                 </div>
@@ -177,7 +182,7 @@
                         <h3>Junior Java Developer</h3>
                         <ul>
                             <li>developing web application for largest pharmaceutical distributor in Poland</li>
-                            <li>working in scrum team</li>
+                            <li>working in a scrum team with Atlassian products: Jira, Confluence, Bitbucket</li>
                         </ul>
                     </div>
                 </div>
@@ -261,18 +266,24 @@
                 <div id="form-elements">
                     <div class="fieldset">
                         <label for="name">Name</label>
-                        <input id="name" name="name"/>
+                        <input id="name" class="input" name="name"/>
                     </div>
                     <div class="fieldset">
                         <label for="email">Email address</label>
-                        <input id="email" name="email" type="email" required/>
+                        <input id="email" name="email" class="input" type="email" required/>
                         <span class="email-invalid" style="display:none">Must be a valid email address</span>
                     </div>
                     <div class="fieldset">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5"></textarea>
+                        <textarea id="message" class="input" name="message" rows="5"></textarea>
                     </div>
                     <button id="submit-button" class="button"><span>Send</span></button>
+                    <div class="lds-ellipsis" style="display: none;">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                     <p class="thank-you-msg" style="display: none;">
                         Thanks for the message!
                     </p>
@@ -290,7 +301,6 @@
                     <p>tel: 602 674 962</p>
                 </div>
             </div>
-            <!--<div id="contact-map-container"></div>-->
         </div>
     </section>
 </main>
@@ -300,8 +310,5 @@
 <script type="text/javascript" src="scripts/animate-skills.js"></script>
 <script type="text/javascript" src="scripts/show-experience.js"></script>
 <script data-cfasync="false" type="text/javascript" src="scripts/form.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJnG80u40mLn7oMkJDYY3lApTGyzR26ls&callback=initMap">
-</script>
 </body>
 </html>

@@ -533,12 +533,13 @@ main {
     width: 400px;
 }
 
-.fieldset input, .fieldset textarea {
+.input {
     background: #272727;
     border: none;
     padding: 10px;
     outline: none;
     color: white;
+    transition: all 0.3s ease-in-out;
 }
 
 input:-webkit-autofill,
@@ -575,6 +576,10 @@ input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 14px 1px #08fdd8;
     -moz-box-shadow: 0 0 14px 1px #08fdd8;;
     box-shadow: 0 0 14px 1px #08fdd8;;
+}
+
+.thank-you-msg {
+    height: 46px;
 }
 
 #contact-info-container {
@@ -686,8 +691,8 @@ input:-webkit-autofill:active {
     }
 
     #about-text p {
-         font-size: 15px;
-     }
+        font-size: 15px;
+    }
 
     .about-bike {
         height: 70px;
@@ -952,4 +957,7 @@ input:-webkit-autofill:active {
         padding: 5px 10px;
     }
 
+    .thank-you-msg, .lds-ellipsis {
+        height: 34px;
+    }
 }

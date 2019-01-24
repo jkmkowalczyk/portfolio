@@ -46,7 +46,6 @@
         formData.formGoogleSheetName = form.dataset.sheet || "responses"; // default sheet name
         formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
 
-        console.log(formData);
         return formData;
     }
 
@@ -62,20 +61,18 @@
                 return false;
             }
         } else {
-            disableAllButtons(form);
+            const submitButton = form.querySelector("#submit-button");
+            const loader = form.querySelector(".lds-ellipsis");
+            disableSubmitButton(submitButton);
+            disableAllInputs(form);
+            hideButtonAndShowLoader(submitButton, loader);
             const url = form.action;
             const xhr = new XMLHttpRequest();
             xhr.open('POST', url);
             // xhr.withCredentials = true;
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function () {
-                console.log(xhr.status, xhr.statusText);
-                console.log(xhr.responseText);
-                const submitButton = form.querySelector("#submit-button");
-                console.log(submitButton);
-                if (submitButton) {
-                    submitButton.style.display = "none"; // hide button
-                }
+                loader.style.display = "none";
                 const thankYouMessage = form.querySelector(".thank-you-msg");
                 if (thankYouMessage) {
                     thankYouMessage.style.display = "block";
@@ -99,10 +96,21 @@
 
     document.addEventListener("DOMContentLoaded", loaded, false);
 
-    function disableAllButtons(form) {
-        const buttons = form.querySelectorAll("#submit-button");
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].disabled = true;
+    function disableSubmitButton(button) {
+        button.disabled = true;
+    }
+
+    function disableAllInputs(form) {
+        const inputs = form.querySelectorAll(".input");
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].disabled = true;
+            inputs[i].value = "";
         }
     }
+
+    function hideButtonAndShowLoader(button, loader) {
+        button.style.display = "none";
+        loader.style.display = "block";
+    }
+
 })();

@@ -39,7 +39,6 @@ function setSectionHeight() {
 }
 
 
-
 function animateProgressbars() {
     progressbarJava.style.width = '80%';
     setTimeout(function () {
