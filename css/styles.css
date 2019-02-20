@@ -387,22 +387,30 @@ main {
 
 #experience-grid-ups-desc-container {
     grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 #experience-grid-spyro-soft-desc-container {
-    grid-column-start: 5;
-    grid-column-end: 9;
+    grid-column-start: 4;
+    grid-column-end: 10;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 #experience-grid-cca-europe-desc-container {
-    grid-column-start: 9;
+    grid-column-start: 8;
     grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 #experience-grid-lideo-desc-container {
-    grid-column-start: 13;
+    grid-column-start: 12;
     grid-column-end: 17;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
 
 #experience-grid-ups-desc {
@@ -471,7 +479,7 @@ main {
 .skills-frontend2, .skills-database, .skills-database2 {
     position: absolute;
     opacity: 0;
-    width: 180px
+    width: 200px
 }
 
 #skills-java {
@@ -870,24 +878,28 @@ input:-webkit-autofill:active {
         grid-column-start: 1;
         grid-column-end: 7;
         grid-row-start: 2;
+        grid-row-end: initial;
     }
 
     #experience-grid-spyro-soft-desc-container {
-        grid-column-start: 2;
+        grid-column-start: 1;
         grid-column-end: 8;
         grid-row-start: 2;
+        grid-row-end: initial;
     }
 
     #experience-grid-cca-europe-desc-container {
         grid-column-start: 2;
         grid-column-end: 8;
         grid-row-start: 2;
+        grid-row-end: initial;
     }
 
     #experience-grid-lideo-desc-container {
         grid-column-start: 2;
         grid-column-end: 8;
-        grid-row-start: 6;
+        grid-row-start: 4;
+        grid-row-end: initial;
     }
 
     #skills {
