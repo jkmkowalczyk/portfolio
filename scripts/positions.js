@@ -25,7 +25,6 @@ let experienceSectionTop;
 let skillsSectionTop;
 let contactSectionTop;
 
-setSectionHeight();
 
 function setSectionHeight() {
     const clientHeight = document.documentElement.clientHeight;
@@ -54,7 +53,10 @@ function animateProgressbars() {
 
 
 function animate() {
-    if (scrollValue >= skillsSectionTop) {
+    console.log(scrollValue);
+    console.log(skillsSectionTop);
+
+    if (scrollValue + 350 >= skillsSectionTop) {
         animateProgressbars();
     }
 }
@@ -104,6 +106,7 @@ function setUp() {
         scrollValue = pageYOffset * -1 + 100;
     setSectionTop();
     setActiveLink();
+    setSectionHeight();
 }
 
 function showNav() {
@@ -162,6 +165,7 @@ function hideMenuList() {
     }
 }
 
+setUp();
 window.addEventListener("load", setUp);
 window.addEventListener("load", showNav);
 window.addEventListener("scroll", setUp);
