@@ -27,7 +27,7 @@ let contactSectionTop;
 
 
 function setSectionHeight() {
-    const clientHeight = document.documentElement.clientHeight;
+    const clientHeight = document.documentElement.clientHeight < 600 ? 600 : document.documentElement.clientHeight;
     let sections = document.getElementsByTagName("section");
     for (let i = 0; i < sections.length; i++) {
         if (clientWidth < 1000)
@@ -53,9 +53,6 @@ function animateProgressbars() {
 
 
 function animate() {
-    console.log(scrollValue);
-    console.log(skillsSectionTop);
-
     if (scrollValue + 350 >= skillsSectionTop) {
         animateProgressbars();
     }
