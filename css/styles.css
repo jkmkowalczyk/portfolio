@@ -898,7 +898,7 @@ input:-webkit-autofill:active {
     #experience-grid-lideo-desc-container {
         grid-column-start: 2;
         grid-column-end: 8;
-        grid-row-start: 4;
+        grid-row-start: 2;
         grid-row-end: initial;
     }
 
